@@ -243,8 +243,8 @@ ul.chevron .submenu > a::after, ul.chevron .sub-submenu > a::after, ul.chevron .
 
 .logo img {
   margin: 0 auto;
-  max-width: 300px;
-  width: 100%;
+  max-width: 500px;
+  width: 50%;
 }
 
 /* Font colors */
@@ -3017,5 +3017,4 @@ section, header {
   .background-image {
     background-position: center;
   }
-
 }
