@@ -3049,3 +3049,104 @@ section, header {
   }
 }
 }
+
+/* Basic header styles */
+.my-header {
+  background-color: #152732; /* Example background color */
+  padding: 1rem; 
+}
+
+.my-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-logo img {
+  max-width: 200px; /* Adjust as needed */
+}
+
+.my-nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.my-nav-links li {
+  margin-left: 2rem;
+}
+
+.my-nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hamburger menu styles (initially hidden) */
+.hamburger {
+  display: none; 
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10; /* Ensure it's on top */
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+/* Media query for smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show the hamburger menu */
+  }
+
+  .my-nav-links {
+    display: none; /* Hide the navigation links */
+    flex-direction: column; /* Stack the links vertically */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: #152732;
+    padding: 1rem;
+  }
+
+  .my-nav-links.show { /* Style for when the menu is open */
+    display: flex;
+  }
+
+  .my-nav-links li {
+    margin: 0.5rem 0; /* Add spacing between links */
+  }
+}
+
+/* Media query for even smaller screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .my-logo img {
+    max-width: 150px; /* Adjust logo size further */
+  }
+}
+
+/* Media query for larger screens (min-width: 1080px) */
+@media (min-width: 1080px) {
+  .my-header {
+    padding: 2rem; /* Increase padding on larger screens */
+  }
+
+  .my-logo img {
+    max-width: 250px; /* Adjust logo size */
+  }
+
+  .my-nav-links li {
+    margin-left: 3rem; /* Increase spacing between links */
+  }
+}
