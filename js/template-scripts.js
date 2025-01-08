@@ -22,16 +22,5 @@ jQuery(document).ready(function($) {
       .then(response => response.text())
       .then(html => {
         document.querySelector('footer.grid').innerHTML = html;
-      });
+      }); 
 
-const navToggle = document.querySelector('.my-nav-toggle');
-const navLinks = document.querySelector('.my-nav-links');
-
-navToggle.addEventListener('click', () => {
-  // Toggle the 'aria-expanded' attribute
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-  navToggle.setAttribute('aria-expanded', !expanded);
-
-  // Toggle the visibility of the navigation links
-  navLinks.hidden = !navLinks.hidden;
-});
