@@ -16,10 +16,11 @@ jQuery(document).ready(function($) {
     fetch('header.html')
       .then(response => response.text())
       .then(html => {
-        document.querySelector('header.grid').innerHTML = html;
+        document.querySelector('header.my-header').innerHTML = html;
       });
     fetch('footer.html')
       .then(response => response.text())
       .then(html => {
         document.querySelector('footer.grid').innerHTML = html;
       });
+
