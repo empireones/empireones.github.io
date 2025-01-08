@@ -3050,10 +3050,16 @@ section, header {
 }
 }
 
+
+
+
+
+
+
 /* Basic header styles */
 .my-header {
-  background-color: #152732; /* Example background color */
-  padding: 1rem; 
+  background-color: #152732;
+  padding: 1rem;
 }
 
 .my-nav {
@@ -3063,7 +3069,7 @@ section, header {
 }
 
 .my-logo img {
-  max-width: 200px; /* Adjust as needed */
+  max-width: 200px;
 }
 
 .my-nav-links ul {
@@ -3082,9 +3088,9 @@ section, header {
   text-decoration: none;
 }
 
-/* Hamburger menu styles (initially hidden) */
-.hamburger {
-  display: none; 
+/* Toggle button styles */
+.my-nav-toggle {
+  display: none; /* Hide the button on larger screens */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -3093,10 +3099,10 @@ section, header {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10; /* Ensure it's on top */
+  z-index: 10;
 }
 
-.hamburger .line {
+.my-nav-toggle .line {
   width: 100%;
   height: 3px;
   background-color: white;
@@ -3105,48 +3111,34 @@ section, header {
 
 /* Media query for smaller screens (max-width: 768px) */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* Show the hamburger menu */
+  .my-nav-toggle {
+    display: flex; /* Show the toggle button */
   }
 
   .my-nav-links {
-    display: none; /* Hide the navigation links */
-    flex-direction: column; /* Stack the links vertically */
+    display: none; /* Hide the navigation links by default */
+    flex-direction: column;
     position: absolute;
-    top: 100%; /* Position below the header */
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #152732;
     padding: 1rem;
   }
 
-  .my-nav-links.show { /* Style for when the menu is open */
+  .my-nav-links ul {
+    flex-direction: column;
+  }
+
+  .my-nav-links li {
+    margin: 0.5rem 0;
+    margin-left: 0;
+  }
+
+  /* Show the menu when the button is clicked */
+  .my-nav-toggle[aria-expanded="true"] + .my-nav-links {
     display: flex;
   }
-
-  .my-nav-links li {
-    margin: 0.5rem 0; /* Add spacing between links */
-  }
 }
 
-/* Media query for even smaller screens (max-width: 480px) */
-@media (max-width: 480px) {
-  .my-logo img {
-    max-width: 150px; /* Adjust logo size further */
-  }
-}
-
-/* Media query for larger screens (min-width: 1080px) */
-@media (min-width: 1080px) {
-  .my-header {
-    padding: 2rem; /* Increase padding on larger screens */
-  }
-
-  .my-logo img {
-    max-width: 250px; /* Adjust logo size */
-  }
-
-  .my-nav-links li {
-    margin-left: 3rem; /* Increase spacing between links */
-  }
-}
+/* ... (rest of the CSS remains the same) ... */
