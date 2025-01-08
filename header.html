@@ -1,5 +1,5 @@
 <!doctype html>
-        <!-- Top Navigation
+    <!--   Top Navigation
         <nav class="s-12 grid background-none background-primary-hightlight">
            
            <a href="index.html" class="logo m-8 l-5 padding-2x ">
@@ -12,8 +12,9 @@
                 <li><a href="contact.html">Contact / Quote</a></li>
               </ul>
            </div>
-        </nav>  -->
-<!DOCTYPE html>
+        </nav>
+
+--> 
 
   <nav class="my-nav">
     <a href="index.html" class="my-logo">
@@ -26,22 +27,12 @@
         <li><a href="contact.html">Contact / Quote</a></li>
       </ul>
     </div>
-    <button class="hamburger" type="button">
+    <button class="my-nav-toggle" aria-expanded="false" aria-controls="my-nav-menu">
       <span class="line"></span>
       <span class="line"></span>
       <span class="line"></span>
-    </button> 
+    </button>
   </nav>
+<script>
 
-<script type="text/javascript">
-	
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.my-nav-links');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  // Toggle the aria-expanded attribute for accessibility
-  hamburger.setAttribute('aria-expanded', hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); 
-});
-
-</script>
+	</script>
