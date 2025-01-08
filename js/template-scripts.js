@@ -12,3 +12,14 @@ jQuery(document).ready(function($) {
     autoplayTimeout: 5000
   });
 });
+
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.querySelector('header.grid').innerHTML = html;
+      });
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.querySelector('footer.grid').innerHTML = html;
+      });
