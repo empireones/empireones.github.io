@@ -219,7 +219,7 @@ nav {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: 1.7rem 0;
   position: relative;
-  z-index: 2;
+
 }  
 .top-nav ul ul {
   background: #002633 none repeat scroll 0 0;
@@ -245,7 +245,7 @@ ul.chevron .submenu > a::after, ul.chevron .sub-submenu > a::after, ul.chevron .
   margin: 0 auto;
   max-width: 500px;
   width: 50%;
-  z-index: 3;
+  z-index: 1;
 }
 
 /* Font colors */
@@ -933,9 +933,23 @@ form.customform input:hover, form.customform textarea:hover, form.customform sel
 
 /* -768px version */
 @media screen and (max-width:768px) {
+		.top-nav.s-12.l-7.chevron {
+        display: block !important; /* Force the div to be displayed */
+    }
+    .top-nav .right {
+        float: none !important; /* Prevent the 'right' class from taking effect */
+    }
+    .top-ul {
+        text-align: center; /* Center the list items */
+    }
+    .top-nav li a {
+        display: block; /* Make each link a block element to stack vertically */
+        margin: 0 auto; /* Center the links horizontally */
+    }
     .top-nav .right {
       float: none;
     }
+
     nav {
         padding: 10px 0;
         height: 60px;
@@ -945,7 +959,7 @@ form.customform input:hover, form.customform textarea:hover, form.customform sel
       max-height: 40px;
       margin: 0 auto;
       width: auto;
-	  z-index: 3;
+	  z-index: 1;
     }
     
     .top-nav li a, .background-white .top-nav li a {
@@ -1316,7 +1330,7 @@ nav {
   border-bottom: 0;
   padding: 25px 0;
   position: relative;
-  z-index: 1;
+ 
 }
 .logo img {
   margin: 0;
@@ -1476,7 +1490,7 @@ section, header {
   .logo img {
     margin: 0 auto;
     max-width: 300px;
-	z-index: 3;
+	z-index: 1;
   }
   .logo img.logo-white {
     display:none;
