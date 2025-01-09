@@ -1086,8 +1086,8 @@ form.customform input:hover, form.customform textarea:hover, form.customform sel
     }
 }  
 
-/* -480px version */
-@media screen and (max-width:480px) {
+/* -520px version */
+@media screen and (max-width:520px) {
     .margin-s-top {
         margin-top: 1.25rem !important;
         display: block;
@@ -1369,7 +1369,7 @@ section, header {
   padding: 50px;
   border: 10px #fff solid;
 }
-@media screen and (max-width:480px) {
+@media screen and (max-width:520px) {
   .aside-nav li a {text-align: left;}
 }
 
@@ -1486,7 +1486,7 @@ section, header {
     margin-right: 0;
   }  
   .top-nav, .nav-text, .top-nav li a, .background-white .top-nav li a {
-    background: none repeat scroll 0 0 #454545;
+    background: none repeat scroll 0 0 #171717 ;
     color: #fff!important
   }
   .margin-top-130 {
