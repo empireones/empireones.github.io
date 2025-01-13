@@ -17,7 +17,10 @@
       <link rel="stylesheet" href="css/template-style.css">
       <link href="https://fonts.googleapis.com/css?family=Barlow:100,300,400,700,800&amp;subset=latin-ext" rel="stylesheet">  
       <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-      <script type="text/javascript" src="js/jquery-ui.min.js"></script>   
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	  <!-- Email JS-->   
+	  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
    </head>
 	
    <body class="size-1520 primary-color-red background-dark">
@@ -53,10 +56,11 @@
         <section class="grid margin-bottom-20">
           <div class="m-12 l-5 center">
             <!-- Contact Information-->
-            <div class="s-12 padding-2x background-white ">                  
+            <div class="s-12 padding-2x background-white ">     
+				
 				<form id="form">
 				  <div class="field">
-					<label for="from_name">Your Name</label>
+					<label for="from_name">Your Name </label>
 					<input type="text" name="from_name" id="from_name" required>
 				  </div>
 				  <div class="field">
@@ -64,20 +68,19 @@
 					<textarea name="message" id="message" rows="7" cols="60"></textarea> 
 				  </div>
 
-
-				  <div class="">
-					<label>Looking for?</label>
+				  <div class="radio-btn">
+					<label>Looking for? </label>
 					<label style="display: inline-block; margin-right: 10px;"> 
-					  <input type="radio" name="Looking_for" value="Home Tech" > Home Tech 
+					  <input type="radio" name="Looking_for" value="Home Tech" required> Home Tech 
 					</label>
 					<label style="display: inline-block;"> 
-					  <input type="radio" name="Looking_for" value="Networking"> Networking  
+					  <input type="radio" name="Looking_for" value="Networking" required> Networking  
 					</label>
 					<label style="display: inline-block;"> 
-					  <input type="radio" name="Looking_for" value="Computer Repair"> Computer Repair  
+					  <input type="radio" name="Looking_for" value="Computer Repair" required> Computer Repair  
 					</label>
 					<label style="display: inline-block;"> 
-					  <input type="radio" name="Looking_for" value="Website"> Website  
+					  <input type="radio" name="Looking_for" value="Website" required> Website  
 					</label>
 				  </div>
 				  <br>
@@ -90,7 +93,7 @@
 					<label for="phone">Phone Number (Optional):</label>
 					<input type="tel" name="phone" id="phone"> 
 				  </div>
-				  <div class="">
+				  <div class="radio-btn">
 					<label>Text?</label>
 					<label style="display: inline-block; margin-right: 10px;"> 
 					  <input type="radio" name="text_msg" value="Y" checked> Yes 
@@ -104,19 +107,32 @@
 				  <input class="center" type="submit" id="button" value="Send Email">
 				</form>
 
-			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-
-			<script type="text/javascript">
+			<script type="text/javascript"> 
+					  
 			   (function(){
 				  emailjs.init({
 					publicKey: "EwTFhY7u_VZm8K_O5",
 				  });
-			   })
-				emailjs.sendForm('contact_service', 'contact_form', this);
-				
-			</script>
-			           
+			   })();	  
+	  		</script>
+			<script type="text/javascript">
+				window.onload = function() {
+					document.getElementById('form').addEventListener('submit', function(event) {
+						event.preventDefault();
+						// these IDs from the previous steps
+						emailjs.sendForm('service_9u6q78w', 'template_xiawt2e', this)
+							.then((result) => {
+								console.log('SUCCESS!', result);
+    							alert('Message sent. Will response within 24 hours!');
+							}, (error) => {
+								console.log('FAILED...', error);
+    							alert('Message failed to send.');
+							});
+					});
+				}
+			</script>	
+	
             </div>
 			  <br>
 			  
@@ -142,6 +158,31 @@
       <script type="text/javascript" src="js/responsee.js"></script>
       <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
       <script type="text/javascript" src="js/template-scripts.js"></script>
+	  <script>
+	   function getQueryParam(name) {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(name);
+		}
+
+		const selectedService = getQueryParam('service'); 
+		console.log(selectedService); // Output:  e.g., "home-automation"
+	   </script>
+	   
+	   <script>
+		   const serviceToRadioButtonMap = {
+				'home-automation': 'Home Tech',
+				'networking': 'Networking',
+				'computer-repair': 'Computer Repair',
+				'website-creation': 'Website'
+			};
+
+			if (selectedService) {
+				const radioButtonValue = serviceToRadioButtonMap[selectedService];
+				const radioButton = document.querySelector(`input[name="Looking_for"][value="${radioButtonValue}"]`);
+				if (radioButton) {
+					radioButton.checked = true;
+				}
+			}</script>
       
    </body>
 
