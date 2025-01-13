@@ -1,11 +1,13 @@
 .field {
   margin-bottom: 10px;
+  font-family: "Barlow"; 
+  color: #525252;
+  
 }
 
 .field label {
   display: block;
   font-size: 16px;
-
 }
 
 .field input {
@@ -18,10 +20,17 @@
   display: block;
   width: 90%;
   line-height: 1.5;
-  font-size: 14px;
-  font-weight: 400; 
-  font-family: "Barlow"; 
+  font-size: 16px;
+  font-weight: 500; 
+  font-family: "Barlow";
+  color: #000000;
 
+}
+.radio-btn {
+  font-size: 16px;
+  font-weight: 450; 
+  font-family: "Barlow";
+  color: #525252;
 }
 
 input[type="submit"] {
@@ -30,5 +39,14 @@ input[type="submit"] {
   font-size: 14px;
   background-color: #4460AA;
   color: #fff;
-  border: none
+  border: none;
+  font-weight: 400; 
+  font-family: "Barlow"; 
+  border-radius: 6px;
 }
+
+
+input[type="submit"]:hover {
+      background-color:#002489;
+      transition: 0.5s;
+  }
